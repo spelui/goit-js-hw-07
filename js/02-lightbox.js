@@ -21,16 +21,7 @@ const createGalleryItems = galleryItems
 
 galleryRef.innerHTML = createGalleryItems;
 
-let gallery = new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
-});
-console.log(gallery);
-
-gallery.on("show.simplelightbox", function () {
-  galleryRef.addEventListener("click", (evt) => {
-    evt.preventDefault();
-
-    if (galleryRef === evt.target) return;
-  });
 });
